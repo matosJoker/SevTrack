@@ -9,7 +9,7 @@
                     <i class="fas fa-arrow-left"></i> Kembali
                 </a>
                 {{-- <a href="{{ route('transactions.edit', $transaction->id) }}" class="btn btn-warning"> --}}
-                    {{-- <i class="fas fa-edit"></i> Edit --}}
+                {{-- <i class="fas fa-edit"></i> Edit --}}
                 {{-- </a> --}}
             </div>
         </div>
@@ -17,31 +17,19 @@
         <div class="card-body">
             <div class="row mb-4">
                 <div class="col-md-6">
-                    <h6 class="font-weight-bold">Informasi Pelanggan</h6>
+                    <h6 class="font-weight-bold">Informasi Kendaraan</h6>
                     <table class="table table-borderless">
-                        <tr>
-                            <td width="30%">Nama</td>
-                            <td>: {{ $transaction->customer->nama }}</td>
-                        </tr>
-                        <tr>
-                            <td>No. Telepon</td>
-                            <td>: {{ $transaction->customer->no_telp ?? '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>: {{ $transaction->customer->email ?? '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Alamat</td>
-                            <td>: {{ $transaction->customer->alamat ?? '-' }}</td>
-                        </tr>
                         <tr>
                             <td>Plat Nomor</td>
                             <td>: {{ $transaction->customer->plat_nomor }}</td>
                         </tr>
                         <tr>
-                            <td>VIN</td>
-                            <td>: {{ $transaction->customer->vin ?? '-' }}</td>
+                            <td width="30%">Tipe Kendaraan</td>
+                            <td>: {{ $transaction->customer->tipe_kendaraan }}</td>
+                        </tr>
+                        <tr>
+                            <td>No Wo</td>
+                            <td>: {{ $transaction->customer->no_wo }}</td>
                         </tr>
                     </table>
                 </div>
@@ -74,13 +62,13 @@
                 </div>
             </div>
 
-            <h6 class="font-weight-bold">Detail Layanan</h6>
+            <h6 class="font-weight-bold">Detail Pekerjaan</h6>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nama Layanan</th>
+                            <th>Nama Pekerjaan</th>
                             <th>Harga</th>
                             <th>Keterangan</th>
                             <th>Foto Sebelum</th>

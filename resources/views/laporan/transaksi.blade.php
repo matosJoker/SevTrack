@@ -70,10 +70,11 @@
                             <th>#</th>
                             <th>Tanggal</th>
                             <th>Plat Nomor</th>
-                            <th>Nama Pelanggan</th>
+                            <th>Tipe Kendaraan</th>
+                            <th>Nomor WO</th>
                             <th>Mekanik</th>
                             <th>Service Advisor</th>
-                            <th>Layanan</th>
+                            <th>Pekerjaan</th>
                             <th>Total</th>
                             <th>Status</th>
                         </tr>
@@ -84,7 +85,8 @@
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ date('d-m-Y H:i:s', strtotime($transaction->created_at)) }}</td>
                                 <td>{{ $transaction->customer->plat_nomor }}</td>
-                                <td>{{ $transaction->customer->nama }}</td>
+                                <td>{{ $transaction->customer->tipe_kendaraan }}</td>
+                                <td>{{ $transaction->customer->no_wo }}</td>
                                 <td>{{ $transaction->mekanik->name }}</td>
                                 <td>{{ $transaction->serviceAdvisor->nama_service_advisor }}</td>
                                 <td>
@@ -106,7 +108,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="8" class="text-center py-4">
+                                <td colspan="10" class="text-center py-4">
                                     <i class="fas fa-exclamation-circle me-2"></i>Tidak ada data transaksi
                                     @if (request()->has('start_date') || request()->has('status'))
                                         dengan filter yang dipilih

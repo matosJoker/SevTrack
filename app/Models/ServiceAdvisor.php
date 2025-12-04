@@ -35,4 +35,8 @@ class ServiceAdvisor extends Model
             $model->save();
         });
     }
+    public function bengkel()
+    {
+        return $this->belongsTo(Bengkel::class, 'id_bengkel');
+    }
 }

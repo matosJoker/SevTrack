@@ -37,6 +37,11 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+
+                            <h5 class="mt-4 mb-3">Data Kendaraan</h5>
+
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="plat_nomor">Plat Nomor</label>
@@ -44,21 +49,11 @@
                                             required>
                                     </div>
                                 </div>
-                            </div>
-
-                            <h5 class="mt-4 mb-3">Data Customer</h5>
-
-                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="nama">Nama Customer</label>
-                                        <input type="text" class="form-control" id="nama" name="nama" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="no_telp">No. Telepon</label>
-                                        <input type="text" class="form-control" id="no_telp" name="no_telp">
+                                        <label for="tipe_kendaraan">Tipe Kendaraan</label>
+                                        <input type="text" class="form-control" id="tipe_kendaraan"
+                                            name="tipe_kendaraan">
                                     </div>
                                 </div>
                             </div>
@@ -66,28 +61,23 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                        <label for="kilometer">Kilometer</label>
+                                        <input type="number" class="form-control" id="kilometer" name="kilometer">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="vin">VIN</label>
-                                        <input type="text" class="form-control" id="vin" name="vin">
+                                        <label for="no_wo">Nomor WO</label>
+                                        <input type="text" class="form-control" id="no_wo" name="no_wo">
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="alamat">Alamat</label>
-                                <textarea class="form-control" id="alamat" name="alamat" rows="2"></textarea>
-                            </div>
-                            <h5 class="mt-4 mb-3">Layanan</h5>
+                            <h5 class="mt-4 mb-3">Pekerjaan</h5>
                             <div id="services-container">
                                 <div class="service-row row mb-3">
                                     <div class="col-md-4">
                                         <select class="form-control service-select" name="services[0][id_layanan]" required>
-                                            <option value="">Pilih Layanan</option>
+                                            <option value="">Pilih Pekerjaan</option>
                                             @foreach ($services as $service)
                                                 <option value="{{ $service->id }}" data-harga="{{ $service->harga }}">
                                                     {{ $service->nama_layanan }} - Rp
@@ -128,7 +118,7 @@
                             </div>
 
                             <button type="button" id="add-service" class="btn btn-secondary mt-2">
-                                <i class="fas fa-plus"></i> Tambah Layanan
+                                <i class="fas fa-plus"></i> Tambah Pekerjaan
                             </button>
 
                             <div class="mt-4">
@@ -171,7 +161,7 @@
                 <div class="service-row row mb-3">
                     <div class="col-md-4">
                         <select class="form-control service-select" name="services[${serviceCount}][id_layanan]" required>
-                            <option value="">Pilih Layanan</option>
+                            <option value="">Pilih Pekerjaan</option>
                             @foreach ($services as $service)
                                 <option value="{{ $service->id }}" data-harga="{{ $service->harga }}">{{ $service->nama_layanan }} - Rp {{ number_format($service->harga, 0, ',', '.') }}</option>
                             @endforeach
@@ -321,25 +311,21 @@
                         success: function(response) {
                             if (response.customer !== null) {
                                 Swal.fire({
-                                    title: 'Customer ditemukan!',
+                                    title: 'Kendaraan ditemukan!',
                                     text: '',
                                 })
-                                $('#nama').val(response.customer.nama);
-                                $('#no_telp').val(response.customer.no_telp);
-                                $('#email').val(response.customer.email);
-                                $('#alamat').val(response.customer.alamat);
-                                $('#vin').val(response.customer.vin);
+                                $('#tipe_kendaraan').val(response.customer.tipe_kendaraan);
+                                $('#no_wo').val(response.customer.no_wo);
+                                $('#kilometer').val(response.customer.kilometer);
 
                             } else {
                                 Swal.fire({
-                                    title: 'Customer tidak ditemukan!',
+                                    title: 'Kendaraan tidak ditemukan!',
                                     text: '',
                                 })
-                                $('#nama').val('');
-                                $('#no_telp').val('');
-                                $('#email').val('');
-                                $('#alamat').val('');
-                                $('#vin').val('');
+                                $('#tipe_kendaraan').val('');
+                                $('#no_wo').val('');
+                                $('#kilometer').val('');
                             }
                         },
                         complete: function() {

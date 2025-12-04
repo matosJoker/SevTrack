@@ -14,12 +14,15 @@ class StoreTransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required|string|max:255',
-            'no_telp' => 'nullable|string|max:15', 
-            'email' => 'nullable|email|max:255',
-            'alamat' => 'nullable|string',
+            // 'nama' => 'required|string|max:255',
+            // 'no_telp' => 'nullable|string|max:15', 
+            // 'email' => 'nullable|email|max:255',
+            // 'alamat' => 'nullable|string',
             'plat_nomor' => 'required|string|max:20',
-            'vin' => 'nullable|string|max:50',
+            // 'vin' => 'nullable|string|max:50',
+            'tipe_kendaraan' => 'required|string|max:255',
+            'kilometer' => 'required|numeric',
+            'no_wo' => 'required|string|max:255',
             'services' => 'required|array|min:1',
             'id_service_advisor' => 'required|exists:service_advisors,id',
             'services.*.id_layanan' => 'required|exists:layanan,id',

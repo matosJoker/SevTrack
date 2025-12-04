@@ -81,7 +81,7 @@ class MenuSeeder extends Seeder
                         'roles' => [$adminRole->id]
                     ],
                     [
-                        'name' => 'Layanan',
+                        'name' => 'Pekerjaan',
                         'icon' => 'fas fa-cogs',
                         'route' => 'layanan.index',
                         'order' => 3,

@@ -24,15 +24,19 @@
 
                 <div class="row mb-4">
                     <div class="col-md-6">
-                        <h6 class="font-weight-bold">Informasi Pelanggan</h6>
+                        <h6 class="font-weight-bold">Informasi Kendaraan</h6>
                         <table class="table table-borderless">
-                            <tr>
-                                <td width="30%">Nama</td>
-                                <td>: {{ $transaction->customer->nama }}</td>
-                            </tr>
                             <tr>
                                 <td>Plat Nomor</td>
                                 <td>: {{ $transaction->customer->plat_nomor }}</td>
+                            </tr>
+                            <tr>
+                                <td width="30%">Tipe Kendaraan</td>
+                                <td>: {{ $transaction->customer->tipe_kendaraan }}</td>
+                            </tr>
+                            <tr>
+                                <td>No Wo</td>
+                                <td>: {{ $transaction->customer->no_wo }}</td>
                             </tr>
                         </table>
                     </div>
@@ -59,12 +63,12 @@
                     <input type="hidden" name="status" value="selesai">
                 </div>
 
-                <h6 class="font-weight-bold">Detail Layanan</h6>
+                <h6 class="font-weight-bold">Detail Pekerjaan</h6>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Nama Layanan</th>
+                                <th>Nama Pekerjaan</th>
                                 <th>Harga</th>
                                 <th>Foto Sebelum</th>
                                 <th>Foto Sesudah</th>
@@ -152,7 +156,7 @@
 
                 // Disable button saat proses
                 submitBtn.prop('disabled', true).html(
-                '<i class="fas fa-spinner fa-spin"></i> Memproses...');
+                    '<i class="fas fa-spinner fa-spin"></i> Memproses...');
                 Swal.fire({
                     title: 'Simpan Transaksi?',
                     text: "Apakah Anda yakin ingin menyimpan transaksi ini?",

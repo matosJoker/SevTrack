@@ -18,6 +18,7 @@ class Transaction extends Model
         'id_service_advisors',
         'total',
         'status',
+        'kilometer',
         'created_by',
         'updated_by',
         'deleted_by'
@@ -36,7 +37,8 @@ class Transaction extends Model
     {
         return $this->hasMany(DetailTransaction::class, 'id_transaksi');
     }
-    public function mekanik(){
+    public function mekanik()
+    {
         return $this->belongsTo(User::class, 'created_by');
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_customers')->nullable(); // Fixed typo in column name
             $table->unsignedBigInteger('id_service_advisors')->nullable();
             $table->decimal('total', 10, 2)->default(0.00);
+            $table->string('kilometer')->nullable();
             $table->string('status')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();

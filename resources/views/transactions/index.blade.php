@@ -17,9 +17,10 @@
                             <th>#</th>
                             <th>Tanggal</th>
                             <th>Plat Nomor</th>
-                            <th>Nama Pelanggan</th>
-                            <th>Nama Service Advisor</th>
-                            <th>Nama Layanan</th>
+                            <th>Tipe Kendaraan</th>
+                            <th>Nomor WO</th>
+                            <th>Service Advisor</th>
+                            <th>Pekerjaan</th>
                             <th>Total</th>
                             <th>Status</th>
                             <th>Aksi</th>
@@ -31,7 +32,8 @@
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ date('d-m-Y H:i:s', strtotime($transaction->created_at)) }}</td>
                                 <td>{{ $transaction->customer->plat_nomor }}</td>
-                                <td>{{ $transaction->customer->nama }}</td>
+                                <td>{{ $transaction->customer->tipe_kendaraan }}</td>
+                                <td>{{ $transaction->customer->no_wo }}</td>
                                 <td>{{ $transaction->serviceAdvisor->nama_service_advisor }}</td>
                                 <td>
                                     @foreach ($transaction->details as $detail)

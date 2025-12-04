@@ -43,9 +43,8 @@
                         <tr>
                             <th>#</th>
                             <th>Plat Nomor</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Telepon</th>
+                            <th>Tipe Kendaraan</th>
+                            <th>Nomor WO</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,14 +52,13 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->plat_nomor }}</td>
-                                <td>{{ $item->nama }}</td>
-                                <td>{{ $item->email }}</td>
-                                <td>{{ $item->no_telp }}</td>
+                                <td>{{ $item->tipe_kendaraan }}</td>
+                                <td>{{ $item->no_wo }}</td>
                             </tr>
                         @endforeach
                         @if (count($pelanggan) == 0)
                             <tr>
-                                <td colspan="5" class="text-center py-4">
+                                <td colspan="4" class="text-center py-4">
                                     <i class="fas fa-exclamation-circle me-2"></i>Tidak ada data pelanggan
                                     @if (request()->has('id_bengkel'))
                                         dengan filter yang dipilih

@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama')->nullable();
             $table->string('no_telp')->nullable();
             $table->string('email')->nullable();
             $table->string('alamat')->nullable();
             $table->string('plat_nomor')->unique();
             $table->string('vin')->unique()->nullable();
+            $table->string('tipe_kendaraan')->unique()->nullable();
+            $table->string('no_wo')->unique()->nullable();
+            $table->string('kilometer')->nullable();
             $table->unsignedBigInteger('id_bengkel')->nullable();
             $table->foreign('id_bengkel')->references('id')->on('bengkel')->onDelete('set null');
             $table->timestamps();

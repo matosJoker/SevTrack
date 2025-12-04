@@ -14,12 +14,15 @@ class Customer extends Model
     protected $table = 'customers';
 
     protected $fillable = [
-        'nama',
-        'no_telp',
-        'email',
-        'alamat',
+        // 'nama',
+        // 'no_telp',
+        // 'email',
+        // 'alamat',
         'plat_nomor',
-        'vin',
+        // 'vin',
+        'tipe_kendaraan',
+        'no_wo',
+        'kilometer',
         'created_by',
         'updated_by',
         'deleted_by'

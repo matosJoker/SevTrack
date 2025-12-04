@@ -132,11 +132,14 @@ class TransactionService
         return DB::transaction(function () use ($data) {
             // 1. Cari atau buat customer berdasarkan plat nomor
             $customerData = [
-                'nama' => $data['nama'],
-                'no_telp' => $data['no_telp'],
-                'email' => $data['email'] ?? null,
-                'alamat' => $data['alamat'] ?? null,
-                'vin' => $data['vin'] ?? null,
+                // 'nama' => $data['nama'],
+                // 'no_telp' => $data['no_telp'],
+                // 'email' => $data['email'] ?? null,
+                // 'alamat' => $data['alamat'] ?? null,
+                // 'vin' => $data['vin'] ?? null,
+                'tipe_kendaraan' => $data['tipe_kendaraan'],
+                'no_wo' => $data['no_wo'],
+                'kilometer' => $data['kilometer'],
                 'id_bengkel' => Auth::user()->bengkel_id,
                 'created_by' => Auth::id()
             ];
@@ -162,6 +165,7 @@ class TransactionService
                 'id_customers' => $customer->id,
                 'status' => 'proses',
                 'total' => $total,
+                'kilometer' => $data['kilometer'],
                 'created_by' => Auth::id()
             ]);
 

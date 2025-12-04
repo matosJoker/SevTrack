@@ -3,9 +3,9 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Daftar Layanan</h5>
+            <h5 class="mb-0">Daftar Pekerjaan</h5>
             <button class="btn btn-primary" data-toggle="modal" data-target="#layModal">
-                <i class="fas fa-plus"></i> Tambah Layanan
+                <i class="fas fa-plus"></i> Tambah Pekerjaan
             </button>
         </div>
 
@@ -15,7 +15,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nama Layanan</th>
+                            <th>Nama Pekerjaan</th>
                             <th>Diskripsi</th>
                             <th>Harga</th>
                             <th>Status</th>
@@ -71,7 +71,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="layModalLabel">Tambah Layanan</h5>
+                    <h5 class="modal-title" id="layModalLabel">Tambah Pekerjaan</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -80,7 +80,7 @@
                     <div class="modal-body">
                         <input type="hidden" id="id_layanan" name="id_layanan">
                         <div class="mb-3">
-                            <label for="nama_layanan" class="form-label">Nama Layanan</label>
+                            <label for="nama_layanan" class="form-label">Nama Pekerjaan</label>
                             <input type="text" class="form-control" id="nama_layanan" name="nama_layanan" required>
                         </div>
                         <div class="mb-3">
@@ -126,13 +126,13 @@
                 var button = $(event.relatedTarget);
                 var modal = $(this);
                 if (button.hasClass('edit-btn')) {
-                    modal.find('.modal-title').text('Edit Layanan');
+                    modal.find('.modal-title').text('Edit Pekerjaan');
                     modal.find('#id_layanan').val(button.data('id'));
                     modal.find('#nama_layanan').val(button.data('nama'));
                     modal.find('#deskripsi').val(button.data('deskripsi'));
                     modal.find('#harga').val(button.data('harga'));
                 } else {
-                    modal.find('.modal-title').text('Tambah Layanan');
+                    modal.find('.modal-title').text('Tambah Pekerjaan');
                     modal.find('#id_layanan').val('');
                     modal.find('#layForm')[0].reset();
                 }
@@ -255,7 +255,7 @@
                         success: function(response) {
                             Swal.fire({
                                 title: 'Berhasil!',
-                                text: `Layanan berhasil ${newStatus === 'aktif' ? 'diaktifkan' : 'dinonaktifkan'}.`,
+                                text: `Pekerjaan berhasil ${newStatus === 'aktif' ? 'diaktifkan' : 'dinonaktifkan'}.`,
                                 icon: 'success',
                                 timer: 1200,
                                 showConfirmButton: false

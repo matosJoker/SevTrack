@@ -31,7 +31,7 @@
                                 <td>{{ $dt->alamat }}</td>
                                 <td>{{ $dt->no_telp ?? '-' }}</td>
                                 <td>{{ $dt->email ?? '-' }}</td>
-                                <td>{{ $dt->bengkel ?? '-' }}</td>
+                                <td>{{ $dt->bengkel->nama_bengkel ?? '-' }}</td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn" data-id="{{ $dt->id }}"
                                         data-nama="{{ $dt->nama_service_advisor }}" data-alamat="{{ $dt->alamat }}"
