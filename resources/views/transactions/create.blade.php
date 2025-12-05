@@ -316,7 +316,7 @@
                                 })
                                 $('#tipe_kendaraan').val(response.customer.tipe_kendaraan);
                                 $('#no_wo').val(response.customer.no_wo);
-                                $('#kilometer').val(response.customer.kilometer);
+                                // $('#kilometer').val(response.customer.kilometer);
 
                             } else {
                                 Swal.fire({
@@ -325,7 +325,7 @@
                                 })
                                 $('#tipe_kendaraan').val('');
                                 $('#no_wo').val('');
-                                $('#kilometer').val('');
+                                // $('#kilometer').val('');
                             }
                         },
                         complete: function() {
